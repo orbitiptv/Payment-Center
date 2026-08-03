@@ -1,0 +1,16 @@
+ORBIT TV PAYMENT CENTER — GITHUB PAGES
+
+Upload BOTH files to the ROOT of your GitHub repository:
+1. index.html
+2. logo.png
+
+The logo is already embedded inside index.html, and logo.png is included as an extra backup.
+
+After upload:
+- Settings → Pages
+- Deploy from a branch
+- Branch: main
+- Folder: /root
+- Save
+- Wait 1–3 minutes
+- Open the site and press Ctrl + F5

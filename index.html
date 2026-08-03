@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#03111f">
+<title>ORBIT TV Payment Center</title>
+<meta name="description" content="ORBIT TV secure payment center with Revolut, ABON, Aircash and crypto payment instructions.">
+<link rel="icon" href="./assets/orbit-tv-logo.png">
+<style>
+:root{
+  --bg:#020b14;--bg2:#061729;--panel:rgba(8,30,53,.88);--panel2:#0b2541;
+  --text:#f7fbff;--muted:#aebdd0;--blue:#00a8ff;--blue2:#33d2ff;
+  --green:#86e13c;--green2:#c2ff6e;--line:rgba(255,255,255,.11);
+  --danger:#ff5e6c;--shadow:0 22px 60px rgba(0,0,0,.38)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 15% 0%,rgba(0,168,255,.23),transparent 33%),
+    radial-gradient(circle at 90% 8%,rgba(134,225,60,.13),transparent 28%),
+    linear-gradient(180deg,var(--bg2),var(--bg));
+  min-height:100vh;overflow-x:hidden
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;
+  background-image:
+    radial-gradient(circle at 10% 20%,#fff 0 1px,transparent 1.5px),
+    radial-gradient(circle at 70% 30%,#fff 0 1px,transparent 1.5px),
+    radial-gradient(circle at 40% 75%,#fff 0 1px,transparent 1.5px),
+    radial-gradient(circle at 90% 85%,#fff 0 1px,transparent 1.5px);
+  background-size:230px 230px,310px 310px,270px 270px,360px 360px
+}
+a{text-decoration:none;color:inherit}
+button,select{font:inherit}
+.wrap{width:min(1180px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:100;background:rgba(2,11,20,.82);
+  backdrop-filter:blur(16px);border-bottom:1px solid var(--line)
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.brand img{width:210px;height:72px;object-fit:contain;filter:drop-shadow(0 0 16px rgba(0,168,255,.45))}
+.nav-actions{display:flex;align-items:center;gap:10px}
+select,.nav-btn{
+  border:1px solid var(--line);background:rgba(255,255,255,.05);color:#fff;
+  border-radius:13px;padding:11px 14px;font-weight:800
+}
+select option{color:#111}
+.hero{text-align:center;padding:74px 0 38px;position:relative}
+.hero-logo{width:min(680px,92vw);height:260px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(0,168,255,.62)) drop-shadow(0 18px 42px rgba(0,0,0,.45));animation:logoFloat 4s ease-in-out infinite}
+.eyebrow{color:var(--green2);font-weight:900;letter-spacing:1.4px;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(40px,6vw,72px);line-height:1.02;margin:14px auto 18px;max-width:940px}
+.hero p{max-width:760px;margin:auto;color:var(--muted);font-size:18px;line-height:1.7}
+.hero-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:25px}
+.badge{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.045)}
+.section{padding:38px 0}
+.section-title{text-align:center;margin:0 0 28px;font-size:clamp(30px,4vw,48px)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.card{
+  position:relative;overflow:hidden;padding:26px;border:1px solid var(--line);
+  border-radius:24px;background:linear-gradient(145deg,rgba(11,37,65,.96),rgba(5,23,41,.96));
+  box-shadow:var(--shadow)
+}
+.card:after{
+  content:"";position:absolute;right:-70px;bottom:-80px;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,168,255,.18),transparent 68%)
+}
+.card-top{display:flex;align-items:center;gap:15px}
+.pay-icon{
+  width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:30px;
+  border:1px solid var(--line);background:rgba(255,255,255,.06)
+}
+.card h3{margin:0;font-size:28px}
+.card p{color:var(--muted);line-height:1.65}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;position:relative;z-index:2}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:13px;padding:13px 16px;font-weight:900;border:1px solid transparent;
+  transition:.2s;cursor:pointer
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.primary{background:linear-gradient(135deg,var(--green),var(--green2));color:#07131f}
+.blue{background:linear-gradient(135deg,var(--blue),var(--blue2));color:#03111f}
+.outline{border-color:var(--line);background:rgba(255,255,255,.045)}
+.guide{
+  margin:26px 0;border:1px solid var(--line);border-radius:26px;overflow:hidden;
+  background:rgba(7,27,48,.92);box-shadow:var(--shadow)
+}
+.guide-head{
+  display:flex;justify-content:space-between;align-items:center;gap:15px;
+  padding:22px 24px;border-bottom:1px solid var(--line);
+  background:linear-gradient(90deg,rgba(0,168,255,.16),rgba(134,225,60,.10))
+}
+.guide-head h3{margin:0;font-size:29px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr)}
+.step{padding:21px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.num{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--green);color:#06111d;font-weight:1000;margin-bottom:13px
+}
+.visual{
+  height:185px;border-radius:18px;background:linear-gradient(180deg,#f9fbff,#dfe7f1);
+  color:#071525;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;
+  justify-content:center;text-align:center;padding:12px;margin-bottom:15px;overflow:hidden
+}
+.phone{
+  width:108px;height:158px;border:7px solid #101820;border-radius:21px;background:#fff;
+  padding:9px;box-shadow:0 8px 22px rgba(0,0,0,.24);font-size:11px
+}
+.phone .bar{height:13px;background:#0b2443;border-radius:6px;margin-bottom:8px}
+.line{height:8px;background:#dce5ef;border-radius:4px;margin:7px 0}
+.action{margin-top:10px;padding:7px 5px;border-radius:7px;background:#72d22f;font-weight:900}
+.ticket,.wallet{
+  width:165px;background:#fff;border-radius:14px;padding:17px 11px;
+  box-shadow:0 9px 22px rgba(0,0,0,.17)
+}
+.ticket{border:2px dashed #59a831}
+.step h4{margin:0 0 8px;font-size:18px}
+.step p{margin:0;color:var(--muted);line-height:1.55;font-size:15px}
+.warning,.info{
+  margin:20px;padding:17px 19px;border-radius:15px;line-height:1.6
+}
+.warning{border:1px solid rgba(255,94,108,.34);background:rgba(255,94,108,.08);color:#ffd9de}
+.info{border:1px solid rgba(134,225,60,.28);background:rgba(134,225,60,.08);color:#e7f5d9}
+.faq{display:grid;gap:12px}
+details{
+  border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.035);
+  padding:17px 19px
+}
+summary{cursor:pointer;font-weight:900}
+details p{color:var(--muted);line-height:1.6}
+.support-box{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:center;
+  border:1px solid var(--line);border-radius:24px;padding:27px;
+  background:linear-gradient(135deg,rgba(0,168,255,.12),rgba(134,225,60,.08))
+}
+.support-box img{width:100%;max-height:230px;object-fit:contain}
+footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);text-align:center}
+.toast{
+  position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(30px);
+  opacity:0;pointer-events:none;background:#0d2a49;color:white;border:1px solid var(--line);
+  padding:12px 16px;border-radius:12px;transition:.25s;z-index:200
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media(max-width:900px){
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(2){border-right:0}
+  .step{border-bottom:1px solid var(--line)}
+  .step:nth-last-child(-n+2){border-bottom:0}
+  .support-box{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  header{position:static}.nav{align-items:flex-start}.brand img{width:130px;height:48px}
+  .nav-btn{display:none}.hero{padding-top:45px}.hero-logo{height:190px}.brand img{width:155px;height:58px}
+  .steps{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .step:last-child{border-bottom:0!important}.btn{width:100%}.guide-head{flex-direction:column;align-items:flex-start}
+}
+
+@keyframes logoFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-7px) scale(1.015)}
+}
+
+
+.logo-fallback{display:none;font-weight:900;letter-spacing:.04em;color:#fff}
+.brand img,.hero-logo,.support-box img{display:block!important;opacity:1!important;visibility:visible!important}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="./assets/orbit-tv-logo.png" alt="ORBIT TV logo"></a>
+    <div class="nav-actions">
+      <select id="lang" aria-label="Language">
+        <option value="en">🇬🇧 English</option>
+        <option value="sr">🇷🇸 Srpski</option>
+        <option value="hr">🇭🇷 Hrvatski</option>
+        <option value="bs">🇧🇦 Bosanski</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="es">🇪🇸 Español</option>
+        <option value="mk">🇲🇰 Македонски</option>
+        <option value="sq">🇦🇱 Shqip</option>
+        <option value="pl">🇵🇱 Polski</option>
+        <option value="tr">🇹🇷 Türkçe</option>
+      </select>
+      <a class="nav-btn" href="https://wa.me/38669843976" target="_blank" data-t="support">WhatsApp support</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <img class="hero-logo" src="./assets/orbit-tv-logo.png" alt="ORBIT TV">
+  <div class="eyebrow" data-t="eyebrow">Secure payment center</div>
+  <h1 data-t="title">Choose a payment method</h1>
+  <p data-t="subtitle">Pay securely using Revolut, ABON, Aircash or cryptocurrency. Illustrated and written instructions are included for every method.</p>
+  <div class="hero-badges">
+    <span class="badge" data-t="badge1">🔒 Secure links</span>
+    <span class="badge" data-t="badge2">🖼 Illustrated instructions</span>
+    <span class="badge" data-t="badge3">✍ Written step by step</span>
+  </div>
+</section>
+
+<section class="section wrap">
+  <h2 class="section-title" data-t="methods">Payment methods</h2>
+  <div class="cards">
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">💳</div><div><h3>Revolut</h3><p data-t="revText">Pay with your Revolut account or a supported bank card.</p></div></div>
+      <div class="btns">
+        <a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="payNow">Pay now ↗</a>
+        <button class="btn outline copy" data-copy="https://revolut.me/djevdjrir0" data-t="copyLink">Copy link</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">🟢</div><div><h3>ABON Cash</h3><p data-t="abonText">Buy a 16-digit ABON PIN and send it to us for activation.</p></div></div>
+      <div class="btns">
+        <a class="btn primary" href="https://abon.cash" target="_blank">abon.cash ↗</a>
+        <a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank">Recharge.com ↗</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">💶</div><div><h3>Aircash</h3><p data-t="airText">Open the Aircash payment page and complete the payment.</p></div></div>
+      <div class="btns">
+        <a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" data-t="payNow">Pay now ↗</a>
+        <button class="btn outline copy" data-copy="https://m3.aircash.eu/acpay/djevdjetc8" data-t="copyLink">Copy link</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">₿</div><div><h3 data-t="crypto">Cryptocurrency</h3><p data-t="cryptoText">BTC, USDT and ETH are supported. Request the correct wallet address before paying.</p></div></div>
+      <div class="btns">
+        <a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" data-t="requestWallet">Request wallet address</a>
+        <a class="btn outline" href="https://t.me/dzekcano72" target="_blank">Telegram</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section wrap">
+<h2 class="section-title" data-t="instructions">Illustrated and written instructions</h2>
+
+<div class="guide">
+  <div class="guide-head"><h3>💳 Revolut</h3><a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="openPage">Open payment page ↗</a></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div class="phone"><div class="bar"></div><div class="line"></div><div class="line"></div><div class="action">OPEN LINK</div></div></div><h4 data-t="r1h">Open the link</h4><p data-t="r1p">Tap the Revolut payment button.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>40 €</strong><div class="line"></div><div class="action">CHECK</div></div></div><h4 data-t="r2h">Check the amount</h4><p data-t="r2p">Confirm the amount and recipient.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>CARD / REVOLUT</strong><div class="line"></div><div class="action">PAY</div></div></div><h4 data-t="r3h">Choose payment</h4><p data-t="r3p">Use Revolut or a supported card.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div class="phone"><div class="bar"></div><div style="font-size:34px">✅</div><strong>SUCCESS</strong></div></div><h4 data-t="r4h">Send confirmation</h4><p data-t="r4p">Send a screenshot after payment.</p></div>
+  </div>
+</div>
+
+<div class="guide">
+  <div class="guide-head"><h3>🟢 ABON Cash</h3><div class="btns"><a class="btn primary" href="https://abon.cash" target="_blank">abon.cash ↗</a><a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank">Recharge.com ↗</a></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">🌐</div></div><h4 data-t="a1h">Open an ABON website</h4><p data-t="a1p">Choose abon.cash or Recharge.com.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="wallet"><strong>SELECT AMOUNT</strong><p>5 € • 10 € • 20 € • 25 € • 50 €</p></div></div><h4 data-t="a2h">Select the amount</h4><p data-t="a2p">Choose the voucher value.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="ticket"><strong>ABON PIN</strong><p>1234 5678 9012 3456</p></div></div><h4 data-t="a3h">Receive the PIN</h4><p data-t="a3p">You will receive a 16-digit PIN.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SEND PIN</strong><div class="action">WHATSAPP</div></div></div><h4 data-t="a4h">Send us the PIN</h4><p data-t="a4p">Send the PIN or a clear voucher photo.</p></div>
+  </div>
+  <div class="warning" data-t="abonWarning">⚠ ABON PIN is single-use. Never publish it or send it to another person.</div>
+</div>
+
+<div class="guide">
+  <div class="guide-head"><h3>💶 Aircash</h3><a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" data-t="openPage">Open payment page ↗</a></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div class="phone"><div class="bar"></div><strong>AIRCASH</strong><div class="action">OPEN</div></div></div><h4 data-t="c1h">Open Aircash</h4><p data-t="c1p">Tap the Aircash button.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>ENTER AMOUNT</strong><div class="line"></div><div class="action">NEXT</div></div></div><h4 data-t="c2h">Enter the amount</h4><p data-t="c2p">Enter the agreed amount.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>CONFIRM</strong><div class="action">PAY</div></div></div><h4 data-t="c3h">Confirm payment</h4><p data-t="c3p">Follow the Aircash instructions.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">📸</div></div><h4 data-t="c4h">Send proof</h4><p data-t="c4p">Send a screenshot of the completed payment.</p></div>
+  </div>
+</div>
+
+<div class="guide">
+  <div class="guide-head"><h3>₿ <span data-t="crypto">Cryptocurrency</span></h3><a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" data-t="requestWallet">Request wallet address</a></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div class="wallet"><div style="font-size:38px">₿</div><strong>BTC • USDT • ETH</strong></div></div><h4 data-t="k1h">Choose currency</h4><p data-t="k1p">Choose BTC, USDT or ETH.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="wallet"><strong>WALLET ADDRESS</strong><p>0x... / bc1...</p></div></div><h4 data-t="k2h">Request address</h4><p data-t="k2p">We send the correct address and network.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SEND CRYPTO</strong><div class="action">CONFIRM</div></div></div><h4 data-t="k3h">Send exact amount</h4><p data-t="k3p">Check network and address carefully.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">🔗</div></div><h4 data-t="k4h">Send TXID</h4><p data-t="k4p">Send the transaction ID or screenshot.</p></div>
+  </div>
+  <div class="warning" data-t="cryptoWarning">⚠ Crypto sent to the wrong address or network may be permanently lost.</div>
+</div>
+
+<div class="info"><strong data-t="important">Important:</strong> <span data-t="finalNote">After every payment, send the confirmation through WhatsApp or Telegram so we can verify it and activate your service.</span></div>
+</section>
+
+<section class="section wrap">
+  <h2 class="section-title" data-t="faqTitle">Frequently asked questions</h2>
+  <div class="faq">
+    <details><summary data-t="q1">What should I do if the payment fails?</summary><p data-t="q1a">Try another card, check online payments and available funds, or contact your bank.</p></details>
+    <details><summary data-t="q2">How do I send an ABON PIN?</summary><p data-t="q2a">Send the full 16-digit PIN or a clear photo of the voucher through WhatsApp or Telegram.</p></details>
+    <details><summary data-t="q3">How long does activation take?</summary><p data-t="q3a">Activation begins after the payment is verified.</p></details>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="support-box">
+    <div>
+      <h2 data-t="needHelp">Need help with payment?</h2>
+      <p data-t="helpText">Send us a message and include a screenshot of the payment or error.</p>
+      <div class="btns">
+        <a class="btn primary" href="https://wa.me/38669843976" target="_blank">WhatsApp</a>
+        <a class="btn blue" href="https://t.me/dzekcano72" target="_blank">Telegram</a>
+      </div>
+    </div>
+    <img src="./assets/orbit-tv-logo.png" alt="ORBIT TV">
+  </div>
+</section>
+</main>
+
+<footer>ORBIT TV • WhatsApp: +386 69 843 976 • Telegram: @dzekcano72</footer>
+<div class="toast" id="toast">Link copied</div>
+
+<script>
+const translations = {
+en:{support:"WhatsApp support",eyebrow:"Secure payment center",title:"Choose a payment method",subtitle:"Pay securely using Revolut, ABON, Aircash or cryptocurrency. Illustrated and written instructions are included for every method.",badge1:"🔒 Secure links",badge2:"🖼 Illustrated instructions",badge3:"✍ Written step by step",methods:"Payment methods",revText:"Pay with your Revolut account or a supported bank card.",payNow:"Pay now ↗",copyLink:"Copy link",abonText:"Buy a 16-digit ABON PIN and send it to us for activation.",airText:"Open the Aircash payment page and complete the payment.",crypto:"Cryptocurrency",cryptoText:"BTC, USDT and ETH are supported. Request the correct wallet address before paying.",requestWallet:"Request wallet address",instructions:"Illustrated and written instructions",openPage:"Open payment page ↗",r1h:"Open the link",r1p:"Tap the Revolut payment button.",r2h:"Check the amount",r2p:"Confirm the amount and recipient.",r3h:"Choose payment",r3p:"Use Revolut or a supported card.",r4h:"Send confirmation",r4p:"Send a screenshot after payment.",a1h:"Open an ABON website",a1p:"Choose abon.cash or Recharge.com.",a2h:"Select the amount",a2p:"Choose the voucher value.",a3h:"Receive the PIN",a3p:"You will receive a 16-digit PIN.",a4h:"Send us the PIN",a4p:"Send the PIN or a clear voucher photo.",abonWarning:"⚠ ABON PIN is single-use. Never publish it or send it to another person.",c1h:"Open Aircash",c1p:"Tap the Aircash button.",c2h:"Enter the amount",c2p:"Enter the agreed amount.",c3h:"Confirm payment",c3p:"Follow the Aircash instructions.",c4h:"Send proof",c4p:"Send a screenshot of the completed payment.",k1h:"Choose currency",k1p:"Choose BTC, USDT or ETH.",k2h:"Request address",k2p:"We send the correct address and network.",k3h:"Send exact amount",k3p:"Check network and address carefully.",k4h:"Send TXID",k4p:"Send the transaction ID or screenshot.",cryptoWarning:"⚠ Crypto sent to the wrong address or network may be permanently lost.",important:"Important:",finalNote:"After every payment, send the confirmation through WhatsApp or Telegram so we can verify it and activate your service.",faqTitle:"Frequently asked questions",q1:"What should I do if the payment fails?",q1a:"Try another card, check online payments and available funds, or contact your bank.",q2:"How do I send an ABON PIN?",q2a:"Send the full 16-digit PIN or a clear photo of the voucher through WhatsApp or Telegram.",q3:"How long does activation take?",q3a:"Activation begins after the payment is verified.",needHelp:"Need help with payment?",helpText:"Send us a message and include a screenshot of the payment or error.",copied:"Link copied"},
+sr:{support:"WhatsApp podrška",eyebrow:"Sigurni centar za plaćanje",title:"Izaberite način plaćanja",subtitle:"Platite sigurno preko Revoluta, ABON-a, Aircasha ili kriptovalute. Za svaki način imate slikovna i pisana uputstva.",badge1:"🔒 Sigurni linkovi",badge2:"🖼 Slikovna uputstva",badge3:"✍ Pisano korak po korak",methods:"Načini plaćanja",revText:"Platite Revolut računom ili podržanom bankovnom karticom.",payNow:"Plati odmah ↗",copyLink:"Kopiraj link",abonText:"Kupite 16-cifreni ABON PIN i pošaljite ga za aktivaciju.",airText:"Otvorite Aircash stranicu i završite uplatu.",crypto:"Kriptovalute",cryptoText:"Podržani su BTC, USDT i ETH. Prije uplate zatražite tačnu adresu.",requestWallet:"Zatraži adresu novčanika",instructions:"Slikovna i pisana uputstva",openPage:"Otvori stranicu za plaćanje ↗",r1h:"Otvorite link",r1p:"Pritisnite Revolut gumb.",r2h:"Provjerite iznos",r2p:"Provjerite iznos i primaoca.",r3h:"Izaberite plaćanje",r3p:"Koristite Revolut ili podržanu karticu.",r4h:"Pošaljite potvrdu",r4p:"Pošaljite screenshot nakon uplate.",a1h:"Otvorite ABON stranicu",a1p:"Izaberite abon.cash ili Recharge.com.",a2h:"Izaberite iznos",a2p:"Izaberite vrijednost kupona.",a3h:"Dobijte PIN",a3p:"Dobićete 16-cifreni PIN.",a4h:"Pošaljite nam PIN",a4p:"Pošaljite PIN ili jasnu sliku kupona.",abonWarning:"⚠ ABON PIN je jednokratan. Ne objavljujte ga i ne šaljite drugima.",c1h:"Otvorite Aircash",c1p:"Pritisnite Aircash gumb.",c2h:"Unesite iznos",c2p:"Unesite dogovoreni iznos.",c3h:"Potvrdite uplatu",c3p:"Pratite Aircash uputstva.",c4h:"Pošaljite dokaz",c4p:"Pošaljite screenshot završene uplate.",k1h:"Izaberite valutu",k1p:"Izaberite BTC, USDT ili ETH.",k2h:"Zatražite adresu",k2p:"Poslaćemo tačnu adresu i mrežu.",k3h:"Pošaljite tačan iznos",k3p:"Provjerite mrežu i adresu.",k4h:"Pošaljite TXID",k4p:"Pošaljite ID transakcije ili screenshot.",cryptoWarning:"⚠ Kripto poslata na pogrešnu adresu ili mrežu može biti trajno izgubljena.",important:"Važno:",finalNote:"Nakon svake uplate pošaljite potvrdu preko WhatsAppa ili Telegrama radi provjere i aktivacije.",faqTitle:"Česta pitanja",q1:"Šta ako uplata ne uspije?",q1a:"Pokušajte drugom karticom, provjerite internet plaćanja i sredstva ili kontaktirajte banku.",q2:"Kako poslati ABON PIN?",q2a:"Pošaljite puni 16-cifreni PIN ili jasnu fotografiju kupona.",q3:"Koliko traje aktivacija?",q3a:"Aktivacija počinje nakon provjere uplate.",needHelp:"Treba vam pomoć?",helpText:"Pošaljite poruku i dodajte screenshot uplate ili greške.",copied:"Link je kopiran"},
+hr:{support:"WhatsApp podrška",eyebrow:"Sigurni centar za plaćanje",title:"Odaberite način plaćanja",subtitle:"Platite sigurno putem Revoluta, ABON-a, Aircasha ili kriptovalute. Za svaki način dostupne su slikovne i pisane upute.",badge1:"🔒 Sigurne poveznice",badge2:"🖼 Slikovne upute",badge3:"✍ Pisano korak po korak",methods:"Načini plaćanja",revText:"Platite Revolut računom ili podržanom bankovnom karticom.",payNow:"Plati sada ↗",copyLink:"Kopiraj poveznicu",abonText:"Kupite 16-znamenkasti ABON PIN i pošaljite ga za aktivaciju.",airText:"Otvorite Aircash stranicu i dovršite uplatu.",crypto:"Kriptovalute",cryptoText:"Podržani su BTC, USDT i ETH. Prije uplate zatražite točnu adresu.",requestWallet:"Zatraži adresu novčanika",instructions:"Slikovne i pisane upute",openPage:"Otvori stranicu za plaćanje ↗",r1h:"Otvorite poveznicu",r1p:"Pritisnite Revolut gumb.",r2h:"Provjerite iznos",r2p:"Provjerite iznos i primatelja.",r3h:"Odaberite plaćanje",r3p:"Koristite Revolut ili podržanu karticu.",r4h:"Pošaljite potvrdu",r4p:"Pošaljite snimku zaslona nakon uplate.",a1h:"Otvorite ABON stranicu",a1p:"Odaberite abon.cash ili Recharge.com.",a2h:"Odaberite iznos",a2p:"Odaberite vrijednost kupona.",a3h:"Preuzmite PIN",a3p:"Dobit ćete 16-znamenkasti PIN.",a4h:"Pošaljite nam PIN",a4p:"Pošaljite PIN ili jasnu fotografiju kupona.",abonWarning:"⚠ ABON PIN je jednokratan. Nemojte ga javno objavljivati niti slati drugima.",c1h:"Otvorite Aircash",c1p:"Pritisnite Aircash gumb.",c2h:"Unesite iznos",c2p:"Unesite dogovoreni iznos.",c3h:"Potvrdite uplatu",c3p:"Slijedite Aircash upute.",c4h:"Pošaljite dokaz",c4p:"Pošaljite snimku zaslona dovršene uplate.",k1h:"Odaberite valutu",k1p:"Odaberite BTC, USDT ili ETH.",k2h:"Zatražite adresu",k2p:"Poslat ćemo točnu adresu i mrežu.",k3h:"Pošaljite točan iznos",k3p:"Pažljivo provjerite mrežu i adresu.",k4h:"Pošaljite TXID",k4p:"Pošaljite ID transakcije ili snimku zaslona.",cryptoWarning:"⚠ Kripto poslano na pogrešnu adresu ili mrežu može biti trajno izgubljeno.",important:"Važno:",finalNote:"Nakon svake uplate pošaljite potvrdu putem WhatsAppa ili Telegrama radi provjere i aktivacije.",faqTitle:"Česta pitanja",q1:"Što učiniti ako uplata ne uspije?",q1a:"Pokušajte drugom karticom, provjerite internetska plaćanja i raspoloživa sredstva ili kontaktirajte banku.",q2:"Kako poslati ABON PIN?",q2a:"Pošaljite puni 16-znamenkasti PIN ili jasnu fotografiju kupona.",q3:"Koliko traje aktivacija?",q3a:"Aktivacija započinje nakon provjere uplate.",needHelp:"Trebate pomoć?",helpText:"Pošaljite poruku i priložite snimku zaslona uplate ili pogreške.",copied:"Poveznica je kopirana"},
+bs:{support:"WhatsApp podrška",eyebrow:"Sigurni centar za plaćanje",title:"Izaberite način plaćanja",subtitle:"Platite sigurno putem Revoluta, ABON-a, Aircasha ili kriptovalute. Za svaki način dostupna su slikovna i pisana uputstva.",badge1:"🔒 Sigurni linkovi",badge2:"🖼 Slikovna uputstva",badge3:"✍ Pisano korak po korak",methods:"Načini plaćanja",revText:"Platite Revolut računom ili podržanom bankovnom karticom.",payNow:"Plati odmah ↗",copyLink:"Kopiraj link",abonText:"Kupite 16-cifreni ABON PIN i pošaljite ga radi aktivacije.",airText:"Otvorite Aircash stranicu i završite uplatu.",crypto:"Kriptovalute",cryptoText:"Podržani su BTC, USDT i ETH. Prije uplate zatražite tačnu adresu.",requestWallet:"Zatraži adresu novčanika",instructions:"Slikovna i pisana uputstva",openPage:"Otvori stranicu za plaćanje ↗",r1h:"Otvorite link",r1p:"Pritisnite Revolut dugme.",r2h:"Provjerite iznos",r2p:"Provjerite iznos i primaoca.",r3h:"Izaberite plaćanje",r3p:"Koristite Revolut ili podržanu karticu.",r4h:"Pošaljite potvrdu",r4p:"Pošaljite screenshot nakon uplate.",a1h:"Otvorite ABON stranicu",a1p:"Izaberite abon.cash ili Recharge.com.",a2h:"Izaberite iznos",a2p:"Izaberite vrijednost kupona.",a3h:"Preuzmite PIN",a3p:"Dobit ćete 16-cifreni PIN.",a4h:"Pošaljite nam PIN",a4p:"Pošaljite PIN ili jasnu fotografiju kupona.",abonWarning:"⚠ ABON PIN je jednokratan. Nemojte ga javno objavljivati niti slati drugima.",c1h:"Otvorite Aircash",c1p:"Pritisnite Aircash dugme.",c2h:"Unesite iznos",c2p:"Unesite dogovoreni iznos.",c3h:"Potvrdite uplatu",c3p:"Pratite Aircash uputstva.",c4h:"Pošaljite dokaz",c4p:"Pošaljite screenshot završene uplate.",k1h:"Izaberite valutu",k1p:"Izaberite BTC, USDT ili ETH.",k2h:"Zatražite adresu",k2p:"Poslat ćemo tačnu adresu i mrežu.",k3h:"Pošaljite tačan iznos",k3p:"Pažljivo provjerite mrežu i adresu.",k4h:"Pošaljite TXID",k4p:"Pošaljite ID transakcije ili screenshot.",cryptoWarning:"⚠ Kripto poslan na pogrešnu adresu ili mrežu može biti trajno izgubljen.",important:"Važno:",finalNote:"Nakon svake uplate pošaljite potvrdu putem WhatsAppa ili Telegrama radi provjere i aktivacije.",faqTitle:"Česta pitanja",q1:"Šta uraditi ako uplata ne uspije?",q1a:"Pokušajte drugom karticom, provjerite online plaćanja i raspoloživa sredstva ili kontaktirajte banku.",q2:"Kako poslati ABON PIN?",q2a:"Pošaljite puni 16-cifreni PIN ili jasnu fotografiju kupona.",q3:"Koliko traje aktivacija?",q3a:"Aktivacija počinje nakon provjere uplate.",needHelp:"Treba vam pomoć?",helpText:"Pošaljite poruku i dodajte screenshot uplate ili greške.",copied:"Link je kopiran"},
+de:{},it:{},es:{},mk:{},sq:{},pl:{},tr:{}
+};
+["de","it","es","mk","sq","pl","tr"].forEach(k=>translations[k]=translations.en);
+
+const lang=document.getElementById("lang");
+const toast=document.getElementById("toast");
+function applyLanguage(code){
+  const t=translations[code]||translations.en;
+  document.documentElement.lang=code;
+  document.querySelectorAll("[data-t]").forEach(el=>{
+    const key=el.dataset.t;
+    if(t[key]) el.textContent=t[key];
+  });
+  localStorage.setItem("orbitPaymentLanguage",code);
+}
+lang.addEventListener("change",e=>applyLanguage(e.target.value));
+const saved=localStorage.getItem("orbitPaymentLanguage");
+if(saved && translations[saved]) lang.value=saved;
+applyLanguage(lang.value);
+
+document.querySelectorAll(".copy").forEach(btn=>{
+  btn.addEventListener("click",async()=>{
+    try{
+      await navigator.clipboard.writeText(btn.dataset.copy);
+      toast.textContent=(translations[lang.value]||translations.en).copied;
+      toast.classList.add("show");
+      setTimeout(()=>toast.classList.remove("show"),1800);
+    }catch(e){
+      prompt("Copy link:",btn.dataset.copy);
+    }
+  });
+});
+</script>
+</body>
+</html>
