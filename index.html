@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#03111f">
 <title>ORBIT TV Payment Center</title>
-<meta name="description" content="ORBIT TV secure payment center with Revolut, ABON, Aircash and crypto payment instructions.">
+<meta name="description" content="ORBIT TV secure payment center with Revolut, Skrill, PaySend, ABON, Aircash and cryptocurrency payment instructions.">
 <link rel="icon" href="./logo.png">
 <style>
 :root{
@@ -200,7 +200,7 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
   <img class="hero-logo" src="./logo.png" alt="ORBIT TV">
   <div class="eyebrow" data-t="eyebrow">Secure payment center</div>
   <h1 data-t="title">Choose a payment method</h1>
-  <p data-t="subtitle">Pay securely using Revolut, ABON, Aircash or cryptocurrency. Illustrated and written instructions are included for every method.</p>
+  <p data-t="subtitle">Choose Revolut, Skrill, PaySend, ABON, Aircash or cryptocurrency. Clear step-by-step instructions are included for every method.</p>
   <div class="hero-badges">
     <span class="badge" data-t="badge1">🔒 Secure links</span>
     <span class="badge" data-t="badge2">🖼 Illustrated instructions</span>
@@ -216,6 +216,20 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
       <div class="btns">
         <a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="payNow">Pay now ↗</a>
         <button class="btn outline copy" data-copy="https://revolut.me/djevdjrir0" data-t="copyLink">Copy link</button>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">💸</div><div><h3>Skrill</h3><p data-t="skrillText">Request our Skrill recipient details, then send the agreed amount from your Skrill account.</p></div></div>
+      <div class="btns">
+        <a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a>
+        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
+      </div>
+    </article>
+    <article class="card">
+      <div class="card-top"><div class="pay-icon">🌍</div><div><h3>PaySend</h3><p data-t="paysendText">Request our recipient details and use PaySend to make an international transfer.</p></div></div>
+      <div class="btns">
+        <a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a>
+        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
       </div>
     </article>
     <article class="card">
@@ -253,6 +267,28 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
     <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>CARD / REVOLUT</strong><div class="line"></div><div class="action">PAY</div></div></div><h4 data-t="r3h">Choose payment</h4><p data-t="r3p">Use Revolut or a supported card.</p></div>
     <div class="step"><div class="num">4</div><div class="visual"><div class="phone"><div class="bar"></div><div style="font-size:34px">✅</div><strong>SUCCESS</strong></div></div><h4 data-t="r4h">Send confirmation</h4><p data-t="r4p">Send a screenshot after payment.</p></div>
   </div>
+</div>
+
+<div class="guide">
+  <div class="guide-head"><h3>💸 Skrill</h3><div class="btns"><a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">💬</div></div><h4 data-t="s1h">Request recipient details</h4><p data-t="s1p">Contact us and ask for the correct Skrill email and amount.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SKRILL</strong><div class="action">LOG IN</div></div></div><h4 data-t="s2h">Open Skrill</h4><p data-t="s2p">Sign in to Skrill and choose Send money.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="wallet"><strong>RECIPIENT + AMOUNT</strong><p>email • EUR</p></div></div><h4 data-t="s3h">Enter payment details</h4><p data-t="s3p">Enter the exact recipient and agreed amount, then review before sending.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">📸</div></div><h4 data-t="s4h">Send confirmation</h4><p data-t="s4p">Send us the transaction confirmation or screenshot.</p></div>
+  </div>
+  <div class="warning" data-t="recipientWarning">⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming.</div>
+</div>
+
+<div class="guide">
+  <div class="guide-head"><h3>🌍 PaySend</h3><div class="btns"><a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">💬</div></div><h4 data-t="p1h">Request recipient details</h4><p data-t="p1p">Contact us for the correct recipient, country, currency and amount.</p></div>
+    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>PAYSEND</strong><div class="action">TRANSFER</div></div></div><h4 data-t="p2h">Start a transfer</h4><p data-t="p2p">Open PaySend, sign in and choose a new transfer.</p></div>
+    <div class="step"><div class="num">3</div><div class="visual"><div class="wallet"><strong>CHECK DETAILS</strong><p>recipient • fee • total</p></div></div><h4 data-t="p3h">Review and pay</h4><p data-t="p3p">Enter the provided details and verify the recipient, fee and total.</p></div>
+    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">✅</div></div><h4 data-t="p4h">Send confirmation</h4><p data-t="p4p">After completion, send us the receipt or transaction reference.</p></div>
+  </div>
+  <div class="warning" data-t="recipientWarning">⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming.</div>
 </div>
 
 <div class="guide">
@@ -325,6 +361,10 @@ hr:{support:"WhatsApp podrška",eyebrow:"Sigurni centar za plaćanje",title:"Oda
 bs:{support:"WhatsApp podrška",eyebrow:"Sigurni centar za plaćanje",title:"Izaberite način plaćanja",subtitle:"Platite sigurno putem Revoluta, ABON-a, Aircasha ili kriptovalute. Za svaki način dostupna su slikovna i pisana uputstva.",badge1:"🔒 Sigurni linkovi",badge2:"🖼 Slikovna uputstva",badge3:"✍ Pisano korak po korak",methods:"Načini plaćanja",revText:"Platite Revolut računom ili podržanom bankovnom karticom.",payNow:"Plati odmah ↗",copyLink:"Kopiraj link",abonText:"Kupite 16-cifreni ABON PIN i pošaljite ga radi aktivacije.",airText:"Otvorite Aircash stranicu i završite uplatu.",crypto:"Kriptovalute",cryptoText:"Podržani su BTC, USDT i ETH. Prije uplate zatražite tačnu adresu.",requestWallet:"Zatraži adresu novčanika",instructions:"Slikovna i pisana uputstva",openPage:"Otvori stranicu za plaćanje ↗",r1h:"Otvorite link",r1p:"Pritisnite Revolut dugme.",r2h:"Provjerite iznos",r2p:"Provjerite iznos i primaoca.",r3h:"Izaberite plaćanje",r3p:"Koristite Revolut ili podržanu karticu.",r4h:"Pošaljite potvrdu",r4p:"Pošaljite screenshot nakon uplate.",a1h:"Otvorite ABON stranicu",a1p:"Izaberite abon.cash ili Recharge.com.",a2h:"Izaberite iznos",a2p:"Izaberite vrijednost kupona.",a3h:"Preuzmite PIN",a3p:"Dobit ćete 16-cifreni PIN.",a4h:"Pošaljite nam PIN",a4p:"Pošaljite PIN ili jasnu fotografiju kupona.",abonWarning:"⚠ ABON PIN je jednokratan. Nemojte ga javno objavljivati niti slati drugima.",c1h:"Otvorite Aircash",c1p:"Pritisnite Aircash dugme.",c2h:"Unesite iznos",c2p:"Unesite dogovoreni iznos.",c3h:"Potvrdite uplatu",c3p:"Pratite Aircash uputstva.",c4h:"Pošaljite dokaz",c4p:"Pošaljite screenshot završene uplate.",k1h:"Izaberite valutu",k1p:"Izaberite BTC, USDT ili ETH.",k2h:"Zatražite adresu",k2p:"Poslat ćemo tačnu adresu i mrežu.",k3h:"Pošaljite tačan iznos",k3p:"Pažljivo provjerite mrežu i adresu.",k4h:"Pošaljite TXID",k4p:"Pošaljite ID transakcije ili screenshot.",cryptoWarning:"⚠ Kripto poslan na pogrešnu adresu ili mrežu može biti trajno izgubljen.",important:"Važno:",finalNote:"Nakon svake uplate pošaljite potvrdu putem WhatsAppa ili Telegrama radi provjere i aktivacije.",faqTitle:"Česta pitanja",q1:"Šta uraditi ako uplata ne uspije?",q1a:"Pokušajte drugom karticom, provjerite online plaćanja i raspoloživa sredstva ili kontaktirajte banku.",q2:"Kako poslati ABON PIN?",q2a:"Pošaljite puni 16-cifreni PIN ili jasnu fotografiju kupona.",q3:"Koliko traje aktivacija?",q3a:"Aktivacija počinje nakon provjere uplate.",needHelp:"Treba vam pomoć?",helpText:"Pošaljite poruku i dodajte screenshot uplate ili greške.",copied:"Link je kopiran"},
 de:{},it:{},es:{},mk:{},sq:{},pl:{},tr:{}
 };
+Object.assign(translations.en,{subtitle:"Choose Revolut, Skrill, PaySend, ABON, Aircash or cryptocurrency. Clear step-by-step instructions are included for every method.",skrillText:"Request our Skrill recipient details, then send the agreed amount from your Skrill account.",paysendText:"Request our recipient details and use PaySend to make an international transfer.",openSkrill:"Open Skrill ↗",openPaysend:"Open PaySend ↗",requestDetails:"Request recipient details",s1h:"Request recipient details",s1p:"Contact us and ask for the correct Skrill email and amount.",s2h:"Open Skrill",s2p:"Sign in to Skrill and choose Send money.",s3h:"Enter payment details",s3p:"Enter the exact recipient and agreed amount, then review before sending.",s4h:"Send confirmation",s4p:"Send us the transaction confirmation or screenshot.",p1h:"Request recipient details",p1p:"Contact us for the correct recipient, country, currency and amount.",p2h:"Start a transfer",p2p:"Open PaySend, sign in and choose a new transfer.",p3h:"Review and pay",p3p:"Enter the provided details and verify the recipient, fee and total.",p4h:"Send confirmation",p4p:"After completion, send us the receipt or transaction reference.",recipientWarning:"⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming."});
+Object.assign(translations.sr,{subtitle:"Platite putem Revoluta, Skrilla, PaySenda, ABON-a, Aircasha ili kriptovalute. Za svaki način slijede jasna uputstva korak po korak.",skrillText:"Zatražite naše Skrill podatke, zatim pošaljite dogovoreni iznos sa svog Skrill računa.",paysendText:"Zatražite podatke primaoca i izvršite međunarodni transfer putem PaySenda.",openSkrill:"Otvori Skrill ↗",openPaysend:"Otvori PaySend ↗",requestDetails:"Zatraži podatke primaoca",s1h:"Zatražite podatke primaoca",s1p:"Javite nam se za tačan Skrill e-mail i iznos.",s2h:"Otvorite Skrill",s2p:"Prijavite se i izaberite slanje novca.",s3h:"Unesite podatke",s3p:"Unesite tačnog primaoca i dogovoreni iznos, pa sve provjerite.",s4h:"Pošaljite potvrdu",s4p:"Pošaljite potvrdu transakcije ili screenshot.",p1h:"Zatražite podatke primaoca",p1p:"Javite nam se za tačnog primaoca, državu, valutu i iznos.",p2h:"Pokrenite transfer",p2p:"Otvorite PaySend, prijavite se i izaberite novi transfer.",p3h:"Provjerite i platite",p3p:"Unesite dobijene podatke i provjerite primaoca, naknadu i ukupni iznos.",p4h:"Pošaljite potvrdu",p4p:"Po završetku pošaljite račun ili broj transakcije.",recipientWarning:"⚠ Plaćajte samo prema podacima koje vam direktno pošalje ORBIT TV podrška. Provjerite primaoca prije potvrde."});
+Object.assign(translations.hr,{subtitle:"Platite putem Revoluta, Skrilla, PaySenda, ABON-a, Aircasha ili kriptovalute. Za svaki način slijede jasne upute korak po korak.",skrillText:"Zatražite naše Skrill podatke, zatim pošaljite dogovoreni iznos sa svog Skrill računa.",paysendText:"Zatražite podatke primatelja i izvršite međunarodni prijenos putem PaySenda.",openSkrill:"Otvori Skrill ↗",openPaysend:"Otvori PaySend ↗",requestDetails:"Zatraži podatke primatelja",s1h:"Zatražite podatke primatelja",s1p:"Javite nam se za točnu Skrill adresu e-pošte i iznos.",s2h:"Otvorite Skrill",s2p:"Prijavite se i odaberite slanje novca.",s3h:"Unesite podatke",s3p:"Unesite točnog primatelja i dogovoreni iznos te sve provjerite.",s4h:"Pošaljite potvrdu",s4p:"Pošaljite potvrdu transakcije ili snimku zaslona.",p1h:"Zatražite podatke primatelja",p1p:"Javite nam se za točnog primatelja, državu, valutu i iznos.",p2h:"Pokrenite prijenos",p2p:"Otvorite PaySend, prijavite se i odaberite novi prijenos.",p3h:"Provjerite i platite",p3p:"Unesite dobivene podatke i provjerite primatelja, naknadu i ukupni iznos.",p4h:"Pošaljite potvrdu",p4p:"Po završetku pošaljite račun ili broj transakcije.",recipientWarning:"⚠ Plaćajte samo prema podacima koje vam izravno pošalje ORBIT TV podrška. Provjerite primatelja prije potvrde."});
+Object.assign(translations.bs,{subtitle:"Platite putem Revoluta, Skrilla, PaySenda, ABON-a, Aircasha ili kriptovalute. Za svaki način slijede jasna uputstva korak po korak.",skrillText:"Zatražite naše Skrill podatke, zatim pošaljite dogovoreni iznos sa svog Skrill računa.",paysendText:"Zatražite podatke primaoca i izvršite međunarodni transfer putem PaySenda.",openSkrill:"Otvori Skrill ↗",openPaysend:"Otvori PaySend ↗",requestDetails:"Zatraži podatke primaoca",s1h:"Zatražite podatke primaoca",s1p:"Javite nam se za tačan Skrill e-mail i iznos.",s2h:"Otvorite Skrill",s2p:"Prijavite se i izaberite slanje novca.",s3h:"Unesite podatke",s3p:"Unesite tačnog primaoca i dogovoreni iznos, pa sve provjerite.",s4h:"Pošaljite potvrdu",s4p:"Pošaljite potvrdu transakcije ili screenshot.",p1h:"Zatražite podatke primaoca",p1p:"Javite nam se za tačnog primaoca, državu, valutu i iznos.",p2h:"Pokrenite transfer",p2p:"Otvorite PaySend, prijavite se i izaberite novi transfer.",p3h:"Provjerite i platite",p3p:"Unesite dobijene podatke i provjerite primaoca, naknadu i ukupni iznos.",p4h:"Pošaljite potvrdu",p4p:"Po završetku pošaljite račun ili broj transakcije.",recipientWarning:"⚠ Plaćajte samo prema podacima koje vam direktno pošalje ORBIT TV podrška. Provjerite primaoca prije potvrde."});
 ["de","it","es","mk","sq","pl","tr"].forEach(k=>translations[k]=translations.en);
 
 const lang=document.getElementById("lang");
