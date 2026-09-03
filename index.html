@@ -73,6 +73,14 @@ h1{font-size:clamp(40px,6vw,72px);line-height:1.02;margin:14px auto 18px;max-wid
   width:62px;height:62px;border-radius:18px;display:grid;place-items:center;font-size:30px;
   border:1px solid var(--line);background:rgba(255,255,255,.06)
 }
+.payment-brand{
+  width:78px;height:62px;flex:0 0 78px;border-radius:16px;display:flex;align-items:center;
+  justify-content:center;padding:10px;background:#fff;border:1px solid rgba(255,255,255,.28);
+  box-shadow:0 8px 22px rgba(0,0,0,.22);overflow:hidden
+}
+.payment-brand img{display:block;max-width:100%;max-height:42px;object-fit:contain}
+.payment-brand.crypto-brand{gap:6px;padding:11px 8px;background:#f8fbff}
+.payment-brand.crypto-brand img{width:18px;height:18px}
 .card h3{margin:0;font-size:28px}
 .card p{color:var(--muted);line-height:1.65}
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;position:relative;z-index:2}
@@ -212,42 +220,42 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
   <h2 class="section-title" data-t="methods">Payment methods</h2>
   <div class="cards">
     <article class="card">
-      <div class="card-top"><div class="pay-icon">💳</div><div><h3>Revolut</h3><p data-t="revText">Pay with your Revolut account or a supported bank card.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Revolut_logo.svg" alt="Revolut logo" loading="lazy"></div><div><h3>Revolut</h3><p data-t="revText">Pay with your Revolut account or a supported bank card.</p></div></div>
       <div class="btns">
         <a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="payNow">Pay now ↗</a>
         <button class="btn outline copy" data-copy="https://revolut.me/djevdjrir0" data-t="copyLink">Copy link</button>
       </div>
     </article>
     <article class="card">
-      <div class="card-top"><div class="pay-icon">💸</div><div><h3>Skrill</h3><p data-t="skrillText">Request our Skrill recipient details, then send the agreed amount from your Skrill account.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://www.skrill.com/typo3conf/ext/sitepackage/Resources/Public/images/icons/Skrill_Logo_With_Tagline.svg" alt="Skrill logo" loading="lazy"></div><div><h3>Skrill</h3><p data-t="skrillText">Request our Skrill recipient details, then send the agreed amount from your Skrill account.</p></div></div>
       <div class="btns">
         <a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a>
         <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
       </div>
     </article>
     <article class="card">
-      <div class="card-top"><div class="pay-icon">🌍</div><div><h3>PaySend</h3><p data-t="paysendText">Request our recipient details and use PaySend to make an international transfer.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://paysend.com/favicon.ico" alt="PaySend logo" loading="lazy"></div><div><h3>PaySend</h3><p data-t="paysendText">Request our recipient details and use PaySend to make an international transfer.</p></div></div>
       <div class="btns">
         <a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a>
         <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
       </div>
     </article>
     <article class="card">
-      <div class="card-top"><div class="pay-icon">🟢</div><div><h3>ABON Cash</h3><p data-t="abonText">Buy a 16-digit ABON PIN and send it to us for activation.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://aircash.b-cdn.net/webcdn/Abon/cropped-abon_logo_11_2017-01.png" alt="ABON Cash logo" loading="lazy"></div><div><h3>ABON Cash</h3><p data-t="abonText">Buy a 16-digit ABON PIN and send it to us for activation.</p></div></div>
       <div class="btns">
         <a class="btn primary" href="https://abon.cash" target="_blank">abon.cash ↗</a>
         <a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank">Recharge.com ↗</a>
       </div>
     </article>
     <article class="card">
-      <div class="card-top"><div class="pay-icon">💶</div><div><h3>Aircash</h3><p data-t="airText">Open the Aircash payment page and complete the payment.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aircash_logo.svg" alt="Aircash logo" loading="lazy"></div><div><h3>Aircash</h3><p data-t="airText">Open the Aircash payment page and complete the payment.</p></div></div>
       <div class="btns">
         <a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" data-t="payNow">Pay now ↗</a>
         <button class="btn outline copy" data-copy="https://m3.aircash.eu/acpay/djevdjetc8" data-t="copyLink">Copy link</button>
       </div>
     </article>
     <article class="card">
-      <div class="card-top"><div class="pay-icon">₿</div><div><h3 data-t="crypto">Cryptocurrency</h3><p data-t="cryptoText">BTC, USDT and ETH are supported. Request the correct wallet address before paying.</p></div></div>
+      <div class="card-top"><div class="payment-brand crypto-brand"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"><img src="https://cdn.simpleicons.org/tether/50AF95" alt="Tether"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><div><h3 data-t="crypto">Cryptocurrency</h3><p data-t="cryptoText">BTC, USDT and ETH are supported. Request the correct wallet address before paying.</p></div></div>
       <div class="btns">
         <a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" data-t="requestWallet">Request wallet address</a>
         <a class="btn outline" href="https://t.me/dzekcano72" target="_blank">Telegram</a>
