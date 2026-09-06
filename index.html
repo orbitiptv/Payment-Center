@@ -178,12 +178,14 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
 .logo-fallback{display:none;font-weight:900;letter-spacing:.04em;color:#fff}
 .brand img,.hero-logo,.support-box img{display:block!important;opacity:1!important;visibility:visible!important}
 
+
+.payment-start{border:1px solid var(--line);border-radius:24px;background:rgba(11,37,65,.8);padding:30px;margin-top:16px}.payment-start h2{font-size:clamp(26px,4vw,38px);margin:12px 0 24px}.start-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:24px}.start-grid b{color:var(--green2);font-size:26px}.start-grid p{color:var(--muted);line-height:1.7}.guide-link{display:inline-block;position:relative;z-index:2;color:var(--green2);font-weight:800;margin-top:22px}.guide{scroll-margin-top:110px}.hero-logo{height:155px;animation:none;margin:0 auto}.hero{padding-top:35px}.payment-brand{width:120px;flex-basis:120px;height:70px}.payment-brand img{max-height:46px}.official-photo{margin:0;padding:24px;background:#f7fafc;color:#344457;text-align:center}.official-photo img{max-width:100%;height:180px;object-fit:contain}.official-photo figcaption{font-size:13px;margin-top:12px}.step p{line-height:1.75}.step{padding:25px}a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green2);outline-offset:5px}@media(max-width:650px){.start-grid{grid-template-columns:1fr;gap:16px}.payment-start{padding:23px}.card{padding:22px}.card-top{align-items:flex-start;flex-wrap:wrap}.card h3{font-size:25px}.nav{flex-wrap:wrap}.nav-actions{flex-wrap:wrap}.hero h1{font-size:40px}.hero-logo{height:120px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#top"><img src="./logo.png" alt="ORBIT TV logo"></a>
+    <a class="brand" href="https://orbitiptv.github.io/"><img src="./logo.png" alt="ORBIT TV logo"></a>
     <div class="nav-actions">
       <select id="lang" aria-label="Language">
         <option value="en">🇬🇧 English</option>
@@ -198,7 +200,7 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
         <option value="pl">🇵🇱 Polski</option>
         <option value="tr">🇹🇷 Türkçe</option>
       </select>
-      <a class="nav-btn" href="https://wa.me/38669843976" target="_blank" data-t="support">WhatsApp support</a>
+      <a class="nav-btn" href="https://wa.me/38669843976" target="_blank" rel="noopener" data-t="support">WhatsApp support</a>
     </div>
   </div>
 </header>
@@ -216,117 +218,117 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
   </div>
 </section>
 
-<section class="section wrap">
+<section class="wrap payment-start"><div class="eyebrow" data-t="startLabel">BEFORE YOU PAY</div><h2 data-t="startTitle">Your payment, in three simple steps.</h2><div class="start-grid"><div><b>01</b><h3 data-t="beforeTitle">Confirm your subscription</h3><p data-t="beforeText">Message us with the service, subscription duration and whether this is a new account or renewal. Wait for confirmation of the amount and currency.</p></div><div><b>02</b><h3 data-t="duringTitle">Choose how to pay</h3><p data-t="duringText">Select a method below. Check the recipient, amount and any provider fees before you confirm the payment.</p></div><div><b>03</b><h3 data-t="afterTitle">Send the receipt</h3><p data-t="afterText">Send your payment receipt with your order or existing username. Activation or renewal follows verification of the received payment.</p></div></div><a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20please%20confirm%20my%20subscription%20and%20payment%20amount." target="_blank" rel="noopener" data-t="confirmOrder">Confirm package and amount on WhatsApp ↗</a></section><section class="section wrap">
   <h2 class="section-title" data-t="methods">Payment methods</h2>
   <div class="cards">
     <article class="card">
       <div class="card-top"><div class="payment-brand"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Revolut_logo.svg" alt="Revolut logo" loading="lazy"></div><div><h3>Revolut</h3><p data-t="revText">Pay with your Revolut account or a supported bank card.</p></div></div>
       <div class="btns">
-        <a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="payNow">Pay now ↗</a>
+        <a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" rel="noopener" data-t="payNow">Pay now ↗</a>
         <button class="btn outline copy" data-copy="https://revolut.me/djevdjrir0" data-t="copyLink">Copy link</button>
       </div>
-    </article>
+    <a class="guide-link" href="#revolut" data-t="readSteps">Read payment instructions →</a></article>
     <article class="card">
       <div class="card-top"><div class="payment-brand"><img src="https://www.skrill.com/typo3conf/ext/sitepackage/Resources/Public/images/icons/Skrill_Logo_With_Tagline.svg" alt="Skrill logo" loading="lazy"></div><div><h3>Skrill</h3><p data-t="skrillText">Request our Skrill recipient details, then send the agreed amount from your Skrill account.</p></div></div>
       <div class="btns">
         <a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a>
-        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
+        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" rel="noopener" data-t="requestDetails">Request recipient details</a>
       </div>
-    </article>
+    <a class="guide-link" href="#skrill" data-t="readSteps">Read payment instructions →</a></article>
     <article class="card">
-      <div class="card-top"><div class="payment-brand"><img src="https://paysend.com/favicon.ico" alt="PaySend logo" loading="lazy"></div><div><h3>PaySend</h3><p data-t="paysendText">Request our recipient details and use PaySend to make an international transfer.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://paysend-design.vercel.app/favicon.svg" alt="PaySend logo" loading="lazy"></div><div><h3>PaySend</h3><p data-t="paysendText">Request our recipient details and use PaySend to make an international transfer.</p></div></div>
       <div class="btns">
         <a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a>
-        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a>
+        <a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" rel="noopener" data-t="requestDetails">Request recipient details</a>
       </div>
-    </article>
+    <a class="guide-link" href="#paysend" data-t="readSteps">Read payment instructions →</a></article>
     <article class="card">
       <div class="card-top"><div class="payment-brand"><img src="https://aircash.b-cdn.net/webcdn/Abon/cropped-abon_logo_11_2017-01.png" alt="ABON Cash logo" loading="lazy"></div><div><h3>ABON Cash</h3><p data-t="abonText">Buy a 16-digit ABON PIN and send it to us for activation.</p></div></div>
       <div class="btns">
-        <a class="btn primary" href="https://abon.cash" target="_blank">abon.cash ↗</a>
-        <a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank">Recharge.com ↗</a>
+        <a class="btn primary" href="https://abon.cash" target="_blank" rel="noopener">abon.cash ↗</a>
+        <a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank" rel="noopener">Recharge.com ↗</a>
       </div>
-    </article>
+    <a class="guide-link" href="#abon" data-t="readSteps">Read payment instructions →</a></article>
     <article class="card">
-      <div class="card-top"><div class="payment-brand"><img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Aircash_logo.svg" alt="Aircash logo" loading="lazy"></div><div><h3>Aircash</h3><p data-t="airText">Open the Aircash payment page and complete the payment.</p></div></div>
+      <div class="card-top"><div class="payment-brand"><img src="https://a.storyblok.com/f/331485/236x36/5427b66d36/aircash-logo.svg" alt="Aircash logo" loading="lazy"></div><div><h3>Aircash</h3><p data-t="airText">Open the Aircash payment page and complete the payment.</p></div></div>
       <div class="btns">
-        <a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" data-t="payNow">Pay now ↗</a>
+        <a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" rel="noopener" data-t="payNow">Pay now ↗</a>
         <button class="btn outline copy" data-copy="https://m3.aircash.eu/acpay/djevdjetc8" data-t="copyLink">Copy link</button>
       </div>
-    </article>
+    <a class="guide-link" href="#aircash" data-t="readSteps">Read payment instructions →</a></article>
     <article class="card">
       <div class="card-top"><div class="payment-brand crypto-brand"><img src="https://cdn.simpleicons.org/bitcoin/F7931A" alt="Bitcoin"><img src="https://cdn.simpleicons.org/tether/50AF95" alt="Tether"><img src="https://cdn.simpleicons.org/ethereum/627EEA" alt="Ethereum"></div><div><h3 data-t="crypto">Cryptocurrency</h3><p data-t="cryptoText">BTC, USDT and ETH are supported. Request the correct wallet address before paying.</p></div></div>
       <div class="btns">
-        <a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" data-t="requestWallet">Request wallet address</a>
-        <a class="btn outline" href="https://t.me/dzekcano72" target="_blank">Telegram</a>
+        <a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" rel="noopener" data-t="requestWallet">Request wallet address</a>
+        <a class="btn outline" href="https://t.me/dzekcano72" target="_blank" rel="noopener">Telegram</a>
       </div>
-    </article>
+    <a class="guide-link" href="#crypto" data-t="readSteps">Read payment instructions →</a></article>
   </div>
 </section>
 
 <section class="section wrap">
 <h2 class="section-title" data-t="instructions">Illustrated and written instructions</h2>
 
-<div class="guide">
-  <div class="guide-head"><h3>💳 Revolut</h3><a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" data-t="openPage">Open payment page ↗</a></div>
+<div class="guide" id="revolut">
+  <div class="guide-head"><h3>💳 Revolut</h3><a class="btn primary" href="https://revolut.me/djevdjrir0" target="_blank" rel="noopener" data-t="openPage">Open payment page ↗</a></div>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div class="phone"><div class="bar"></div><div class="line"></div><div class="line"></div><div class="action">OPEN LINK</div></div></div><h4 data-t="r1h">Open the link</h4><p data-t="r1p">Tap the Revolut payment button.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>40 €</strong><div class="line"></div><div class="action">CHECK</div></div></div><h4 data-t="r2h">Check the amount</h4><p data-t="r2p">Confirm the amount and recipient.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>CARD / REVOLUT</strong><div class="line"></div><div class="action">PAY</div></div></div><h4 data-t="r3h">Choose payment</h4><p data-t="r3p">Use Revolut or a supported card.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div class="phone"><div class="bar"></div><div style="font-size:34px">✅</div><strong>SUCCESS</strong></div></div><h4 data-t="r4h">Send confirmation</h4><p data-t="r4p">Send a screenshot after payment.</p></div>
+    <div class="step"><div class="num">1</div><h4 data-t="r1h">Open the link</h4><p data-t="r1p">Tap the Revolut payment button.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="r2h">Check the amount</h4><p data-t="r2p">Confirm the amount and recipient.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="r3h">Choose payment</h4><p data-t="r3p">Use Revolut or a supported card.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="r4h">Send confirmation</h4><p data-t="r4p">Send a screenshot after payment.</p></div>
   </div>
 </div>
 
-<div class="guide">
-  <div class="guide-head"><h3>💸 Skrill</h3><div class="btns"><a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a></div></div>
+<div class="guide" id="skrill">
+  <div class="guide-head"><h3>💸 Skrill</h3><div class="btns"><a class="btn primary" href="https://www.skrill.com/" target="_blank" rel="noopener" data-t="openSkrill">Open Skrill ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20Skrill.%20Please%20send%20the%20recipient%20details." target="_blank" rel="noopener" data-t="requestDetails">Request recipient details</a></div></div>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">💬</div></div><h4 data-t="s1h">Request recipient details</h4><p data-t="s1p">Contact us and ask for the correct Skrill email and amount.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SKRILL</strong><div class="action">LOG IN</div></div></div><h4 data-t="s2h">Open Skrill</h4><p data-t="s2p">Sign in to Skrill and choose Send money.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="wallet"><strong>RECIPIENT + AMOUNT</strong><p>email • EUR</p></div></div><h4 data-t="s3h">Enter payment details</h4><p data-t="s3p">Enter the exact recipient and agreed amount, then review before sending.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">📸</div></div><h4 data-t="s4h">Send confirmation</h4><p data-t="s4p">Send us the transaction confirmation or screenshot.</p></div>
-  </div>
-  <div class="warning" data-t="recipientWarning">⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming.</div>
-</div>
-
-<div class="guide">
-  <div class="guide-head"><h3>🌍 PaySend</h3><div class="btns"><a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" data-t="requestDetails">Request recipient details</a></div></div>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">💬</div></div><h4 data-t="p1h">Request recipient details</h4><p data-t="p1p">Contact us for the correct recipient, country, currency and amount.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>PAYSEND</strong><div class="action">TRANSFER</div></div></div><h4 data-t="p2h">Start a transfer</h4><p data-t="p2p">Open PaySend, sign in and choose a new transfer.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="wallet"><strong>CHECK DETAILS</strong><p>recipient • fee • total</p></div></div><h4 data-t="p3h">Review and pay</h4><p data-t="p3p">Enter the provided details and verify the recipient, fee and total.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">✅</div></div><h4 data-t="p4h">Send confirmation</h4><p data-t="p4p">After completion, send us the receipt or transaction reference.</p></div>
+    <div class="step"><div class="num">1</div><h4 data-t="s1h">Request recipient details</h4><p data-t="s1p">Contact us and ask for the correct Skrill email and amount.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="s2h">Open Skrill</h4><p data-t="s2p">Sign in to Skrill and choose Send money.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="s3h">Enter payment details</h4><p data-t="s3p">Enter the exact recipient and agreed amount, then review before sending.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="s4h">Send confirmation</h4><p data-t="s4p">Send us the transaction confirmation or screenshot.</p></div>
   </div>
   <div class="warning" data-t="recipientWarning">⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming.</div>
 </div>
 
-<div class="guide">
-  <div class="guide-head"><h3>🟢 ABON Cash</h3><div class="btns"><a class="btn primary" href="https://abon.cash" target="_blank">abon.cash ↗</a><a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank">Recharge.com ↗</a></div></div>
+<div class="guide" id="paysend">
+  <div class="guide-head"><h3>🌍 PaySend</h3><div class="btns"><a class="btn blue" href="https://paysend.com/" target="_blank" rel="noopener" data-t="openPaysend">Open PaySend ↗</a><a class="btn outline" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20PaySend.%20Please%20send%20the%20recipient%20details." target="_blank" rel="noopener" data-t="requestDetails">Request recipient details</a></div></div>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div style="font-size:50px">🌐</div></div><h4 data-t="a1h">Open an ABON website</h4><p data-t="a1p">Choose abon.cash or Recharge.com.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="wallet"><strong>SELECT AMOUNT</strong><p>5 € • 10 € • 20 € • 25 € • 50 €</p></div></div><h4 data-t="a2h">Select the amount</h4><p data-t="a2p">Choose the voucher value.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="ticket"><strong>ABON PIN</strong><p>1234 5678 9012 3456</p></div></div><h4 data-t="a3h">Receive the PIN</h4><p data-t="a3p">You will receive a 16-digit PIN.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SEND PIN</strong><div class="action">WHATSAPP</div></div></div><h4 data-t="a4h">Send us the PIN</h4><p data-t="a4p">Send the PIN or a clear voucher photo.</p></div>
+    <div class="step"><div class="num">1</div><h4 data-t="p1h">Request recipient details</h4><p data-t="p1p">Contact us for the correct recipient, country, currency and amount.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="p2h">Start a transfer</h4><p data-t="p2p">Open PaySend, sign in and choose a new transfer.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="p3h">Review and pay</h4><p data-t="p3p">Enter the provided details and verify the recipient, fee and total.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="p4h">Send confirmation</h4><p data-t="p4p">After completion, send us the receipt or transaction reference.</p></div>
+  </div>
+  <div class="warning" data-t="recipientWarning">⚠ Only pay using recipient details sent directly by ORBIT TV support. Check the recipient before confirming.</div>
+</div>
+
+<div class="guide" id="abon"><figure class="official-photo"><img src="https://aircash.b-cdn.net/webcdn/Abon/abonovi.png" alt="ABON prepaid vouchers — official product image" loading="lazy"><figcaption><a href="https://abon.cash/" target="_blank" rel="noopener" data-t="photoCredit">Official ABON voucher image · Values and availability depend on country.</a></figcaption></figure>
+  <div class="guide-head"><h3>🟢 ABON Cash</h3><div class="btns"><a class="btn primary" href="https://abon.cash" target="_blank" rel="noopener">abon.cash ↗</a><a class="btn outline" href="https://www.recharge.com/sl/si/abon" target="_blank" rel="noopener">Recharge.com ↗</a></div></div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4 data-t="a1h">Open an ABON website</h4><p data-t="a1p">Choose abon.cash or Recharge.com.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="a2h">Select the amount</h4><p data-t="a2p">Choose the voucher value.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="a3h">Receive the PIN</h4><p data-t="a3p">You will receive a 16-digit PIN.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="a4h">Send us the PIN</h4><p data-t="a4p">Send the PIN or a clear voucher photo.</p></div>
   </div>
   <div class="warning" data-t="abonWarning">⚠ ABON PIN is single-use. Never publish it or send it to another person.</div>
 </div>
 
-<div class="guide">
-  <div class="guide-head"><h3>💶 Aircash</h3><a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" data-t="openPage">Open payment page ↗</a></div>
+<div class="guide" id="aircash">
+  <div class="guide-head"><h3>💶 Aircash</h3><a class="btn blue" href="https://m3.aircash.eu/acpay/djevdjetc8" target="_blank" rel="noopener" data-t="openPage">Open payment page ↗</a></div>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div class="phone"><div class="bar"></div><strong>AIRCASH</strong><div class="action">OPEN</div></div></div><h4 data-t="c1h">Open Aircash</h4><p data-t="c1p">Tap the Aircash button.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="phone"><div class="bar"></div><strong>ENTER AMOUNT</strong><div class="line"></div><div class="action">NEXT</div></div></div><h4 data-t="c2h">Enter the amount</h4><p data-t="c2p">Enter the agreed amount.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>CONFIRM</strong><div class="action">PAY</div></div></div><h4 data-t="c3h">Confirm payment</h4><p data-t="c3p">Follow the Aircash instructions.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">📸</div></div><h4 data-t="c4h">Send proof</h4><p data-t="c4p">Send a screenshot of the completed payment.</p></div>
+    <div class="step"><div class="num">1</div><h4 data-t="c1h">Open Aircash</h4><p data-t="c1p">Tap the Aircash button.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="c2h">Enter the amount</h4><p data-t="c2p">Enter the agreed amount.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="c3h">Confirm payment</h4><p data-t="c3p">Follow the Aircash instructions.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="c4h">Send proof</h4><p data-t="c4p">Send a screenshot of the completed payment.</p></div>
   </div>
 </div>
 
-<div class="guide">
-  <div class="guide-head"><h3>₿ <span data-t="crypto">Cryptocurrency</span></h3><a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" data-t="requestWallet">Request wallet address</a></div>
+<div class="guide" id="crypto">
+  <div class="guide-head"><h3>₿ <span data-t="crypto">Cryptocurrency</span></h3><a class="btn primary" href="https://wa.me/38669843976?text=Hello%2C%20I%20want%20to%20pay%20with%20BTC%2FUSDT%2FETH.%20Please%20send%20the%20wallet%20address." target="_blank" rel="noopener" data-t="requestWallet">Request wallet address</a></div>
   <div class="steps">
-    <div class="step"><div class="num">1</div><div class="visual"><div class="wallet"><div style="font-size:38px">₿</div><strong>BTC • USDT • ETH</strong></div></div><h4 data-t="k1h">Choose currency</h4><p data-t="k1p">Choose BTC, USDT or ETH.</p></div>
-    <div class="step"><div class="num">2</div><div class="visual"><div class="wallet"><strong>WALLET ADDRESS</strong><p>0x... / bc1...</p></div></div><h4 data-t="k2h">Request address</h4><p data-t="k2p">We send the correct address and network.</p></div>
-    <div class="step"><div class="num">3</div><div class="visual"><div class="phone"><div class="bar"></div><strong>SEND CRYPTO</strong><div class="action">CONFIRM</div></div></div><h4 data-t="k3h">Send exact amount</h4><p data-t="k3p">Check network and address carefully.</p></div>
-    <div class="step"><div class="num">4</div><div class="visual"><div style="font-size:50px">🔗</div></div><h4 data-t="k4h">Send TXID</h4><p data-t="k4p">Send the transaction ID or screenshot.</p></div>
+    <div class="step"><div class="num">1</div><h4 data-t="k1h">Choose currency</h4><p data-t="k1p">Choose BTC, USDT or ETH.</p></div>
+    <div class="step"><div class="num">2</div><h4 data-t="k2h">Request address</h4><p data-t="k2p">We send the correct address and network.</p></div>
+    <div class="step"><div class="num">3</div><h4 data-t="k3h">Send exact amount</h4><p data-t="k3p">Check network and address carefully.</p></div>
+    <div class="step"><div class="num">4</div><h4 data-t="k4h">Send TXID</h4><p data-t="k4p">Send the transaction ID or screenshot.</p></div>
   </div>
   <div class="warning" data-t="cryptoWarning">⚠ Crypto sent to the wrong address or network may be permanently lost.</div>
 </div>
@@ -349,8 +351,8 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
       <h2 data-t="needHelp">Need help with payment?</h2>
       <p data-t="helpText">Send us a message and include a screenshot of the payment or error.</p>
       <div class="btns">
-        <a class="btn primary" href="https://wa.me/38669843976" target="_blank">WhatsApp</a>
-        <a class="btn blue" href="https://t.me/dzekcano72" target="_blank">Telegram</a>
+        <a class="btn primary" href="https://wa.me/38669843976" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn blue" href="https://t.me/dzekcano72" target="_blank" rel="noopener">Telegram</a>
       </div>
     </div>
     <img src="./logo.png" alt="ORBIT TV">
@@ -359,7 +361,7 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
 </main>
 
 <footer>ORBIT TV • WhatsApp: +386 69 843 976 • Telegram: @dzekcano72</footer>
-<div class="toast" id="toast">Link copied</div>
+<div class="toast" id="toast" role="status" aria-live="polite">Link copied</div>
 
 <script>
 const translations = {
@@ -375,6 +377,8 @@ Object.assign(translations.hr,{subtitle:"Platite putem Revoluta, Skrilla, PaySen
 Object.assign(translations.bs,{subtitle:"Platite putem Revoluta, Skrilla, PaySenda, ABON-a, Aircasha ili kriptovalute. Za svaki način slijede jasna uputstva korak po korak.",skrillText:"Zatražite naše Skrill podatke, zatim pošaljite dogovoreni iznos sa svog Skrill računa.",paysendText:"Zatražite podatke primaoca i izvršite međunarodni transfer putem PaySenda.",openSkrill:"Otvori Skrill ↗",openPaysend:"Otvori PaySend ↗",requestDetails:"Zatraži podatke primaoca",s1h:"Zatražite podatke primaoca",s1p:"Javite nam se za tačan Skrill e-mail i iznos.",s2h:"Otvorite Skrill",s2p:"Prijavite se i izaberite slanje novca.",s3h:"Unesite podatke",s3p:"Unesite tačnog primaoca i dogovoreni iznos, pa sve provjerite.",s4h:"Pošaljite potvrdu",s4p:"Pošaljite potvrdu transakcije ili screenshot.",p1h:"Zatražite podatke primaoca",p1p:"Javite nam se za tačnog primaoca, državu, valutu i iznos.",p2h:"Pokrenite transfer",p2p:"Otvorite PaySend, prijavite se i izaberite novi transfer.",p3h:"Provjerite i platite",p3p:"Unesite dobijene podatke i provjerite primaoca, naknadu i ukupni iznos.",p4h:"Pošaljite potvrdu",p4p:"Po završetku pošaljite račun ili broj transakcije.",recipientWarning:"⚠ Plaćajte samo prema podacima koje vam direktno pošalje ORBIT TV podrška. Provjerite primaoca prije potvrde."});
 ["de","it","es","mk","sq","pl","tr"].forEach(k=>translations[k]=translations.en);
 
+Object.assign(translations.en,{"startLabel":"BEFORE YOU PAY","startTitle":"Your payment, in three simple steps.","beforeTitle":"Confirm your subscription","beforeText":"Message us with the service, subscription duration and whether this is a new account or renewal. Wait for confirmation of the amount and currency.","duringTitle":"Choose how to pay","duringText":"Select a method below. Check the recipient, amount and any provider fees before you confirm the payment.","afterTitle":"Send the receipt","afterText":"Send your payment receipt with your order or existing username. Activation or renewal follows verification of the received payment.","confirmOrder":"Confirm package and amount on WhatsApp ↗","readSteps":"Read payment instructions →","photoCredit":"Official ABON voucher image · Values and availability depend on country.","badge2":"Original payment brand images","instructions":"How to pay — step by step","revText":"Open our Revolut link. Pay with Revolut or use a card if that option is offered on the payment page.","r1p":"First confirm your package and price with ORBIT support. Then open our Revolut payment link.","r2p":"Check the recipient displayed on the page. Enter or verify the agreed amount and currency; stop and ask support if anything differs.","r3p":"Choose one of the methods offered on the page and complete any bank verification. Card availability depends on the provider.","r4p":"Once the payment is marked completed, send the receipt and your order or existing username to ORBIT support.","a1p":"Before buying, ask support which voucher country, currency and total value are accepted for your order. Find a seller through abon.cash or the linked online shop.","a2p":"Buy only the agreed voucher value and currency. Check the seller’s fees and total before purchase.","a3p":"Keep the receipt and the unused 16-digit PIN. Do not redeem the voucher yourself if you agreed to use it for this order.","a4p":"Send the unused PIN or a legible voucher photo only in your private conversation with ORBIT support, together with your order.","c1p":"Open our Aircash payment link after confirming your subscription and amount with support.","c2p":"Check the recipient shown and enter or verify the agreed amount and currency. Review any fees.","c3p":"Complete the steps shown by Aircash and wait for a completed payment status. If the link cannot be used, contact support for another method.","c4p":"Send the completed receipt and your order or existing username through WhatsApp or Telegram.","k1p":"Ask support to quote the amount in BTC, USDT or ETH for your chosen subscription.","k2p":"Request the current wallet address, exact blockchain network and any required memo/tag. Do not reuse old details without confirmation.","k3p":"Match the address and network exactly, verify the amount that will arrive after fees, and confirm only when all details match.","k4p":"Send the transaction hash (TXID), coin, network and your order. Activation follows verification; a pending transfer is not yet a completed payment.","q1a":"First check whether the transaction is failed, pending or completed. Do not pay twice while it is pending. Send the status or error to support; hide card numbers, balances and unrelated transactions.","helpText":"Send your order, payment method, amount and transaction reference. You may attach a receipt; hide card numbers and unrelated financial information. Never send passwords, card security codes or one-time bank codes.","eyebrow":"Subscription payment center","badge1":"Direct payment links"});
+for(const code of ['bs','sr','hr']) Object.assign(translations[code],{"startLabel":"PRIJE UPLATE","startTitle":"Plaćanje u tri jednostavna koraka.","beforeTitle":"Dogovorite pretplatu","beforeText":"Pošaljite nam naziv usluge, trajanje pretplate i da li je nova aktivacija ili produženje. Sačekajte potvrdu iznosa i valute.","duringTitle":"Izaberite način plaćanja","duringText":"Odaberite način ispod. Prije potvrde provjerite primaoca, iznos i eventualnu naknadu pružaoca plaćanja.","afterTitle":"Pošaljite potvrdu","afterText":"Pošaljite potvrdu uplate uz narudžbu ili postojeće korisničko ime. Aktivacija ili produženje slijedi nakon provjere primljene uplate.","confirmOrder":"Dogovori paket i iznos na WhatsAppu ↗","readSteps":"Pogledaj uputstvo za plaćanje →","photoCredit":"Službena slika ABON bonova · Iznosi i dostupnost zavise od države.","badge2":"Originalne slike načina plaćanja","instructions":"Kako platiti — korak po korak","revText":"Otvorite naš Revolut link. Platite Revolutom ili karticom ako je ta opcija ponuđena na stranici za uplatu.","r1p":"Prvo dogovorite paket i cijenu s ORBIT podrškom. Zatim otvorite naš Revolut link za uplatu.","r2p":"Provjerite prikazanog primaoca. Unesite ili provjerite dogovoreni iznos i valutu. Ako nešto nije tačno, javite se podršci prije uplate.","r3p":"Izaberite ponuđeni način plaćanja i završite eventualnu potvrdu banke. Plaćanje karticom zavisi od dostupnih opcija na stranici.","r4p":"Kada uplata ima status završene transakcije, pošaljite potvrdu i narudžbu ili postojeće korisničko ime.","a1p":"Prije kupovine pitajte podršku koja država, valuta i ukupna vrijednost bona odgovaraju narudžbi. Prodajno mjesto pronađite preko abon.cash ili povezanog online prodavača.","a2p":"Kupite samo dogovorenu vrijednost i valutu bona. Provjerite naknade prodavača i ukupan iznos prije kupovine.","a3p":"Sačuvajte račun i neiskorišteni PIN od 16 cifara. Nemojte sami iskoristiti bon ako ste ga dogovorili za ovu narudžbu.","a4p":"Neiskorišteni PIN ili jasnu sliku bona pošaljite samo u privatni razgovor s ORBIT podrškom, zajedno s narudžbom.","c1p":"Nakon dogovora pretplate i iznosa otvorite naš Aircash link za plaćanje.","c2p":"Provjerite prikazanog primaoca, dogovoreni iznos i valutu te eventualne naknade.","c3p":"Pratite korake na Aircash stranici i sačekajte status završene uplate. Ako link ne možete koristiti, zatražite drugi način od podrške.","c4p":"Pošaljite potvrdu završene uplate i narudžbu ili postojeće korisničko ime putem WhatsAppa ili Telegrama.","k1p":"Zatražite od podrške tačan iznos u BTC, USDT ili ETH za izabranu pretplatu.","k2p":"Zatražite aktuelnu adresu novčanika, tačnu blockchain mrežu i memo/tag ako je potreban. Ne koristite stare podatke bez provjere.","k3p":"Adresa i mreža moraju se potpuno poklapati. Provjerite iznos koji će stići nakon naknada i tek onda potvrdite slanje.","k4p":"Pošaljite ID transakcije (TXID), valutu, mrežu i narudžbu. Aktivacija slijedi nakon provjere; transakcija na čekanju još nije završena uplata.","q1a":"Prvo provjerite da li je transakcija odbijena, na čekanju ili završena. Ne plaćajte ponovo dok je na čekanju. Podršci pošaljite status ili grešku; sakrijte brojeve kartica, stanje računa i druge transakcije.","helpText":"Pošaljite narudžbu, način plaćanja, iznos i broj transakcije. Na potvrdi sakrijte brojeve kartica i nepovezane podatke. Nikada ne šaljite lozinke, sigurnosni kod kartice ni jednokratne bankovne kodove.","eyebrow":"Centar za plaćanje pretplate","badge1":"Direktni linkovi za uplatu"});
 const lang=document.getElementById("lang");
 const toast=document.getElementById("toast");
 function applyLanguage(code){
@@ -384,10 +388,10 @@ function applyLanguage(code){
     const key=el.dataset.t;
     if(t[key]) el.textContent=t[key];
   });
-  localStorage.setItem("orbitPaymentLanguage",code);
+  try{localStorage.setItem("orbitPaymentLanguage",code)}catch(e){}
 }
 lang.addEventListener("change",e=>applyLanguage(e.target.value));
-const saved=localStorage.getItem("orbitPaymentLanguage");
+let saved;try{saved=localStorage.getItem("orbitPaymentLanguage")}catch(e){};
 if(saved && translations[saved]) lang.value=saved;
 applyLanguage(lang.value);
 
