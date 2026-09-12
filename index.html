@@ -181,7 +181,27 @@ footer{padding:28px 0 44px;border-top:1px solid var(--line);color:var(--muted);t
 
 .payment-start{border:1px solid var(--line);border-radius:24px;background:rgba(11,37,65,.8);padding:30px;margin-top:16px}.payment-start h2{font-size:clamp(26px,4vw,38px);margin:12px 0 24px}.start-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:24px}.start-grid b{color:var(--green2);font-size:26px}.start-grid p{color:var(--muted);line-height:1.7}.guide-link{display:inline-block;position:relative;z-index:2;color:var(--green2);font-weight:800;margin-top:22px}.guide{scroll-margin-top:110px}.hero-logo{height:155px;animation:none;margin:0 auto}.hero{padding-top:35px}.payment-brand{width:120px;flex-basis:120px;height:70px}.payment-brand img{max-height:46px}.official-photo{margin:0;padding:24px;background:#f7fafc;color:#344457;text-align:center}.official-photo img{max-width:100%;height:180px;object-fit:contain}.official-photo figcaption{font-size:13px;margin-top:12px}.step p{line-height:1.75}.step{padding:25px}a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--green2);outline-offset:5px}@media(max-width:650px){.start-grid{grid-template-columns:1fr;gap:16px}.payment-start{padding:23px}.card{padding:22px}.card-top{align-items:flex-start;flex-wrap:wrap}.card h3{font-size:25px}.nav{flex-wrap:wrap}.nav-actions{flex-wrap:wrap}.hero h1{font-size:40px}.hero-logo{height:120px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
 </style>
-<link rel="stylesheet" href="payment-light.css?v=20260912-1">
+<style id="payment-light-theme">:root{color-scheme:light;--bg:#f6f8fb;--bg2:#fff;--panel:#fff;--panel2:#edf3f8;--text:#172b40;--muted:#4e6174;--blue:#1266a5;--blue2:#0d558c;--green:#18713b;--green2:#155e32;--line:#d5e0e9;--danger:#a32636;--shadow:0 10px 32px rgba(32,65,95,.08)}
+body{background:linear-gradient(180deg,#fff 0%,#f3f7fb 100%)}
+body:before{display:none}
+header{background:rgba(255,255,255,.96)}
+select,.nav-btn{background:#fff;color:var(--text)}
+.brand img,.hero-logo{filter:drop-shadow(0 4px 10px rgba(23,63,93,.12))}
+.badge,.outline,details{background:#fff}
+.card{background:linear-gradient(145deg,#fff,#f7fbff)}
+.card:after{background:radial-gradient(circle,rgba(18,102,165,.06),transparent 68%)}
+.payment-brand{border-color:var(--line);box-shadow:0 4px 12px rgba(32,65,95,.08)}
+.payment-start,.guide{background:#fff}
+.guide-head{background:linear-gradient(90deg,#edf5fd,#f0f7ef)}
+.support-box{background:linear-gradient(135deg,#eaf4fc,#f1f8ed)}
+.primary,.blue,.num{color:#fff}
+.btn:hover{filter:brightness(.94)}
+.warning{color:#842331;background:#fff1f2;border-color:#e6b5bc}
+.info{color:#235c33;background:#eef8ef;border-color:#b8d8be}
+.logo-fallback{color:var(--text)}
+.toast{background:#173b59;color:#fff}
+a:focus-visible,button:focus-visible,select:focus-visible,summary:focus-visible{outline-color:#1266a5}
+</style>
 </head>
 <body>
 <header>
